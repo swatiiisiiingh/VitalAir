@@ -2,7 +2,7 @@ import httpx
 import time
 
 _cache = {}
-CACHE_TTL = 600  # 10 minutes
+CACHE_TTL = 600
 
 async def get_weather(lat: float, lon: float):
     key = f"{round(lat, 2)},{round(lon, 2)}"
@@ -34,7 +34,6 @@ async def get_weather(lat: float, lon: float):
             _cache[key] = (data, now)
             return data
 
-    # If all retries hit 429, return last known cache if we have anything at all
     if key in _cache:
         return _cache[key][0]
     raise Exception("Open-Meteo rate limit exceeded, please try again shortly")
