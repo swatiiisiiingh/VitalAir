@@ -116,8 +116,3 @@ Open `http://localhost:5173`.
 - Advisory history is stored per-location in a local SQLite file on the backend, which resets if the backend service redeploys
 - Render's free tier sleeps after inactivity, causing a brief delay on the first request after idle
 
-## Team Hackathon
-- Vedant Seth
-- Sharvari Bhimte
-- Sarvagya Joshi
-- Swati Singh
